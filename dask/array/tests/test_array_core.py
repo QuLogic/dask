@@ -2397,7 +2397,7 @@ def test_from_array_list(x):
     assert dx.dask[dx.name, 0][0] == x[0]
 
 
-@pytest.mark.parametrize("type_", [t for t in np.ScalarType if t is not memoryview])
+@pytest.mark.parametrize("type_", sorted((t for t in np.ScalarType if t is not memoryview), key=lambda t: t.__name__))
 def test_from_array_scalar(type_):
     """Python and numpy scalars are automatically converted to ndarray"""
     if type_ == np.datetime64:
