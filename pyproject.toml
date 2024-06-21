@@ -75,11 +75,9 @@ complete = [
 test = [
     "pandas[test]",
     "pytest",
-    "pytest-cov",
     "pytest-rerunfailures",
     "pytest-timeout",
     "pytest-xdist",
-    "pre-commit",
 ]
 
 [project.entry-points."dask.array.backends"]
@@ -128,7 +126,7 @@ markers = [
     "skip_with_pyarrow_strings: Tests that should be skipped when pyarrow string conversion is turned on",
     "xfail_with_pyarrow_strings: Tests that should be xfailed when pyarrow string conversion is turned on",
 ]
-addopts = "-v -rsfE --durations=10 --color=yes --cov-config=pyproject.toml"
+addopts = "-v -rsfE --durations=10 --color=yes"
 filterwarnings = [
     "error:::dask[.*]",
     "error:::pandas[.*]",
